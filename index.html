@@ -252,8 +252,7 @@
       <img src="https://digimon.net/cimages/digimon/palmon.jpg" class="sb-av">パルモン（整理）<span class="sb-badge">🌱</span>
     </div>
     <div class="sb-item" onclick="goAgent('identity-design')">
-      <span class="sb-av" style="font-size:12px;display:flex;align-items:center;justify-content:center;">ポ</span>
-      ポコモン（ID）<span class="sb-badge">🌱</span>
+      <img src="https://digimon.net/cimages/digimon/pokomon.jpg" class="sb-av" onerror="this.outerHTML='<span class=\'sb-av\' style=\'font-size:12px;display:flex;align-items:center;justify-content:center;\'>ポ</span>'">ポコモン（ID）<span class="sb-badge">🌱</span>
     </div>
     <div class="sb-item" onclick="goAgent('secretary')">
       <img src="https://digimon.net/cimages/digimon/pyocomon.jpg" class="sb-av">ピョコモン（秘書）<span class="sb-badge">🐥</span>
@@ -396,7 +395,8 @@
                       <!-- ポコモン -->
                       <li>
                         <div class="org-node" onclick="openChat('identity-design')">
-                          <div class="node-avatar-placeholder" style="border-color:var(--pink)">ポコ</div>
+                          <img src="https://digimon.net/cimages/digimon/pokomon.jpg" class="node-avatar" style="border-color:var(--pink)"
+                               onerror="this.outerHTML='<div class=\'node-avatar-placeholder\' style=\'border-color:var(--pink)\'>ポコ</div>'">
                           <div class="node-name">ポコモン</div>
                           <div class="node-role">IDデザイン</div>
                           <span class="evo-badge evo-growth">🌱 成長期</span>
@@ -517,7 +517,7 @@ const AGENTS = [
   { id:'security', name:'トコモン', role:'セキュリティ — リスク評価', avatar:'https://digimon.net/cimages/digimon/tokomon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'セラフィモン（究極体）', desc:'定期セキュリティチェック。新ツール導入時のリスク評価。APIキー・認証情報のgit追跡防止。CTOの管轄。', skills:['セキュリティ監査','.gitignore管理','リスク評価'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'CTO管轄',c:'chip-pink'}] },
   { id:'handover', name:'ニャロモン', role:'PC間同期 — 引き継ぎ担当', avatar:'https://digimon.net/cimages/digimon/nyaromon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'メタルガルルモン（究極体）', desc:'セッション終了時に引き継ぎノート生成・git push・Discord通知を自動実行。CTO管轄のインフラ担当。', skills:['引き継ぎノート生成','git push','Discord通知','PC間同期'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'CTO管轄',c:'chip-blue'}] },
   { id:'organization', name:'パルモン', role:'整理・人事部門 — 構造最適化', avatar:'https://digimon.net/cimages/digimon/palmon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'ロゼモン（究極体）', desc:'ファイル構造・CLAUDE.md・スキル・エージェント構成の最適化。組織図可視化。週次監査。ポコモン（ID）を管轄。', skills:['ファイル整理','CLAUDE.md管理','スキル最適化','週次監査'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'整理・人事',c:'chip-blue'}] },
-  { id:'identity-design', name:'ポコモン', role:'IDデザイン — デジモン管理', avatar:'', evo:'🌱 成長期', evoCls:'chip-green', target:'サクヤモン（究極体）', desc:'各エージェントへのデジモン割り当て・進化管理・Notionアイコン更新。パルモン（整理部門）の管轄。', skills:['デジモン割り当て','進化管理','Notionアイコン','台帳管理'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'パルモン管轄',c:'chip-pink'}] },
+  { id:'identity-design', name:'ポコモン', role:'IDデザイン — デジモン管理', avatar:'https://digimon.net/cimages/digimon/pokomon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'サクヤモン（究極体）', desc:'各エージェントへのデジモン割り当て・進化管理・Notionアイコン更新。パルモン（整理部門）の管轄。', skills:['デジモン割り当て','進化管理','Notionアイコン','台帳管理'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'パルモン管轄',c:'chip-pink'}] },
   { id:'secretary', name:'ピョコモン', role:'秘書 — 先生の直属', avatar:'https://digimon.net/cimages/digimon/pyocomon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'ホウオウモン（究極体）', desc:'先生に直属する秘書。スケジュール管理・タスク整理。Googleカレンダー連携（Gemini経由）。', skills:['スケジュール管理','タスク整理','Google Calendar'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'先生直属',c:'chip-blue'}] },
   { id:'note-writer', name:'エンジェウーモン', role:'note記事作成 — 医療コンテンツ', avatar:'https://digimon.net/cimages/digimon/angewomon.jpg', evo:'⚡ 成熟期', evoCls:'chip-orange', target:'オファニモン（究極体）', desc:'消化器・肛門疾患専門医Dr.Coinのnote記事をエビデンスベースで制作。Claude監修 + Geminiリサーチ体制。', skills:['医療記事執筆','エビデンス調査','Gemini連携','Claude Opus使用'], tags:[{l:'⚡ 成熟期',c:'chip-orange'},{l:'プロジェクト',c:'chip-yellow'}] },
   { id:'video-rename', name:'ホークモン', role:'手術動画リネーム — OCR処理', avatar:'https://digimon.net/cimages/digimon/hawkmon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'シルフィーモン（完全体）', desc:'くるめ病院の手術MTS動画をOCR + 患者CSVマッチングで自動リネーム。提示不要・自律実行。', skills:['OCR処理','CSVマッチング','ファイルリネーム','自律実行'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'プロジェクト',c:'chip-pink'}] },
