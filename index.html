@@ -179,6 +179,9 @@
   .agent-desc { font-size: 11px; color: var(--text2); line-height: 1.6; border-left: 2px solid var(--border); padding-left: 9px; }
   .agent-skills { display: flex; flex-wrap: wrap; gap: 4px; }
   .skill-tag { font-size: 10px; padding: 2px 7px; border-radius: 4px; background: var(--bg3); color: var(--text2); border: 1px solid var(--border); }
+  .cmd-tag { font-size: 10px; padding: 2px 7px; border-radius: 4px; background: rgba(88,166,255,.12); color: var(--accent); border: 1px solid rgba(88,166,255,.35); font-family: monospace; font-weight: 600; }
+  .cmd-section { margin-bottom: 6px; }
+  .cmd-label { font-size: 10px; color: var(--text2); margin-bottom: 3px; }
   .agent-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); }
   .evo-line { font-size: 10px; color: var(--text2); }
   .evo-line strong { color: var(--text); }
@@ -265,6 +268,9 @@
     </div>
     <div class="sb-item" onclick="goAgent('video-rename')">
       <img src="https://digimon.net/cimages/digimon/hawkmon.jpg" class="sb-av">ホークモン（動画）<span class="sb-badge">🐥</span>
+    </div>
+    <div class="sb-item" onclick="goAgent('doc-handler')">
+      <img src="https://digimon.net/cimages/digimon/wizarmon.jpg" class="sb-av" onerror="this.outerHTML='<span class=\'sb-av\' style=\'font-size:12px;display:flex;align-items:center;justify-content:center;\'>ウィ</span>'">ウィザーモン（文書）<span class="sb-badge">🌱</span>
     </div>
   </div>
   <div class="sb-section">
@@ -511,26 +517,24 @@
 
 <script>
 const AGENTS = [
-  { id:'coo', name:'グレイモン', role:'COO — 組織全体の監督', avatar:'https://digimon.net/cimages/digimon/greymon-first.jpg', evo:'⚡ 成熟期', evoCls:'chip-orange', target:'ウォーグレイモン（究極体）', desc:'長田先生の右腕。全エージェントへの指示振り分け、組織パフォーマンス管理、毎朝6:30の日次レポート生成を担う。', skills:['組織統括','タスク振り分け','日次レポート','Notion出力','モデル判定'], tags:[{l:'⚡ 成熟期',c:'chip-orange'},{l:'コア',c:'chip-blue'}] },
-  { id:'cto', name:'カブテリモン', role:'CTO — システム・AI分業最適化', avatar:'https://digimon.net/cimages/digimon/kabuterimon.jpg', evo:'⚡ 成熟期', evoCls:'chip-orange', target:'ヘラクルカブテリモン（究極体）', desc:'AI分業アーキテクチャ設計。Googleサービス専任監視（Antigravity/Gemini）。Python vs Claude判定フロー管理。', skills:['AI分業設計','Google監視','Python判定','ツール調査','コスト最適化'], tags:[{l:'⚡ 成熟期',c:'chip-orange'},{l:'システム',c:'chip-blue'}] },
-  { id:'cost-mgmt', name:'テリアモン', role:'コスト管理 — 使用量監視', avatar:'https://digimon.net/cimages/digimon/terriermon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'セントガルゴモン（究極体）', desc:'Claude / Google APIの月額料金・トークン使用量をグラフ化。分業原則の監視・最適化提案。CTOの管轄。', skills:['コスト可視化','トークン監視','分業原則管理','アラート'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'CTO管轄',c:'chip-yellow'}] },
-  { id:'security', name:'トコモン', role:'セキュリティ — リスク評価', avatar:'https://digimon.net/cimages/digimon/tokomon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'セラフィモン（究極体）', desc:'定期セキュリティチェック。新ツール導入時のリスク評価。APIキー・認証情報のgit追跡防止。CTOの管轄。', skills:['セキュリティ監査','.gitignore管理','リスク評価'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'CTO管轄',c:'chip-pink'}] },
-  { id:'handover', name:'ニャロモン', role:'PC間同期 — 引き継ぎ担当', avatar:'https://digimon.net/cimages/digimon/nyaromon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'メタルガルルモン（究極体）', desc:'セッション終了時に引き継ぎノート生成・git push・Discord通知を自動実行。CTO管轄のインフラ担当。', skills:['引き継ぎノート生成','git push','Discord通知','PC間同期'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'CTO管轄',c:'chip-blue'}] },
-  { id:'organization', name:'パルモン', role:'整理・人事部門 — 構造最適化', avatar:'https://digimon.net/cimages/digimon/palmon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'ロゼモン（究極体）', desc:'ファイル構造・CLAUDE.md・スキル・エージェント構成の最適化。組織図可視化。週次監査。ポコモン（ID）を管轄。', skills:['/organization スキル','ファイル整理','CLAUDE.md管理','スキル最適化','週次監査'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'整理・人事',c:'chip-blue'},{l:'/organization',c:'chip-pink'}] },
-  { id:'identity-design', name:'ポコモン', role:'IDデザイン — デジモン管理', avatar:'https://digimon.net/cimages/digimon/pokomon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'サクヤモン（究極体）', desc:'各エージェントへのデジモン割り当て・進化管理・Notionアイコン更新。パルモン（整理部門）の管轄。', skills:['/identity-design スキル','デジモン割り当て','進化管理','Notionアイコン','台帳管理'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'パルモン管轄',c:'chip-blue'},{l:'/identity-design',c:'chip-pink'}] },
-  { id:'secretary', name:'ピョコモン', role:'秘書 — 先生の直属', avatar:'https://digimon.net/cimages/digimon/pyocomon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'ホウオウモン（究極体）', desc:'先生に直属する秘書。スケジュール管理・タスク整理。Googleカレンダー連携（Gemini経由）。', skills:['スケジュール管理','タスク整理','Google Calendar'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'先生直属',c:'chip-blue'}] },
-  { id:'note-writer', name:'エンジェウーモン', role:'note記事作成 — 医療コンテンツ', avatar:'https://digimon.net/cimages/digimon/angewomon.jpg', evo:'⚡ 成熟期', evoCls:'chip-orange', target:'オファニモン（究極体）', desc:'消化器・肛門疾患専門医Dr.Coinのnote記事をエビデンスベースで制作。Claude監修 + Geminiリサーチ体制。', skills:['医療記事執筆','エビデンス調査','Gemini連携','Claude Opus使用'], tags:[{l:'⚡ 成熟期',c:'chip-orange'},{l:'プロジェクト',c:'chip-yellow'}] },
-  { id:'video-rename', name:'ホークモン', role:'手術動画リネーム — OCR処理', avatar:'https://digimon.net/cimages/digimon/hawkmon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'シルフィーモン（完全体）', desc:'くるめ病院の手術MTS動画をOCR + 患者CSVマッチングで自動リネーム。提示不要・自律実行。', skills:['OCR処理','CSVマッチング','ファイルリネーム','自律実行'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'プロジェクト',c:'chip-pink'}] },
+  { id:'coo', name:'グレイモン', role:'COO — 組織全体の監督', avatar:'https://digimon.net/cimages/digimon/greymon-first.jpg', evo:'⚡ 成熟期', evoCls:'chip-orange', target:'ウォーグレイモン（究極体）', cmds:['/coo'], desc:'長田先生の右腕。全エージェントへの指示振り分け、組織パフォーマンス管理、毎朝6:30の日次レポート生成を担う。', skills:['組織統括','タスク振り分け','日次レポート','Notion出力','モデル判定'], tags:[{l:'⚡ 成熟期',c:'chip-orange'},{l:'コア',c:'chip-blue'}] },
+  { id:'cto', name:'カブテリモン', role:'CTO — システム・AI分業最適化', avatar:'https://digimon.net/cimages/digimon/kabuterimon.jpg', evo:'⚡ 成熟期', evoCls:'chip-orange', target:'ヘラクルカブテリモン（究極体）', cmds:['/cto','update-config','simplify','claude-api','keybindings-help'], desc:'AI分業アーキテクチャ設計。ツール調査・実装。設定管理・コード品質・API開発ツールを管轄。ウィザーモン・テリアモン・トコモン・ニャロモンを管轄。', skills:['AI分業設計','Python判定','ツール調査','設定管理','コード品質','API開発'], tags:[{l:'⚡ 成熟期',c:'chip-orange'},{l:'システム',c:'chip-blue'}] },
+  { id:'cost-mgmt', name:'テリアモン', role:'コスト管理 — 使用量監視', avatar:'https://digimon.net/cimages/digimon/terriermon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'セントガルゴモン（究極体）', cmds:['/cost-mgmt'], desc:'Claude / Google APIの月額料金・トークン使用量をグラフ化。分業原則の監視・最適化提案。CTOの管轄。', skills:['コスト可視化','トークン監視','分業原則管理','アラート'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'CTO管轄',c:'chip-yellow'}] },
+  { id:'security', name:'トコモン', role:'セキュリティ — リスク評価', avatar:'https://digimon.net/cimages/digimon/tokomon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'セラフィモン（究極体）', cmds:[], desc:'定期セキュリティチェック。新ツール導入時のリスク評価。APIキー・認証情報のgit追跡防止。CTOの管轄。', skills:['セキュリティ監査','.gitignore管理','リスク評価'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'CTO管轄',c:'chip-pink'}] },
+  { id:'handover', name:'ニャロモン', role:'PC間同期 — 引き継ぎ担当', avatar:'https://digimon.net/cimages/digimon/nyaromon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'メタルガルルモン（究極体）', cmds:['/handover','/session-end','loop'], desc:'セッション終了時に引き継ぎノート生成・git push・Discord通知を自動実行。ループ・定期自動化も担当。CTO管轄。', skills:['引き継ぎノート生成','git push','Discord通知','PC間同期','定期ループ実行'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'CTO管轄',c:'chip-blue'}] },
+  { id:'organization', name:'パルモン', role:'整理・人事部門 — 構造最適化', avatar:'https://digimon.net/cimages/digimon/palmon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'ロゼモン（究極体）', cmds:['/organization','skill-creator'], desc:'ファイル構造・CLAUDE.md・スキル・エージェント構成の最適化。新スキル作成・改善。組織図可視化・週次監査。ポコモン（ID）を管轄。', skills:['ファイル整理','CLAUDE.md管理','スキル最適化','新スキル作成','週次監査'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'整理・人事',c:'chip-blue'}] },
+  { id:'identity-design', name:'ポコモン', role:'IDデザイン — デジモン管理', avatar:'https://digimon.net/cimages/digimon/pokomon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'サクヤモン（究極体）', cmds:['/identity-design'], desc:'各エージェントへのデジモン割り当て・進化管理・Notionアイコン更新。パルモン（整理部門）の管轄。', skills:['デジモン割り当て','進化管理','Notionアイコン','台帳管理'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'パルモン管轄',c:'chip-blue'}] },
+  { id:'secretary', name:'ピョコモン', role:'秘書 — 先生の直属', avatar:'https://digimon.net/cimages/digimon/pyocomon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'ホウオウモン（究極体）', cmds:['/schedule'], desc:'先生に直属する秘書。スケジュール管理・タスク整理・定期タスク設定。Googleカレンダー連携（Gemini経由）。', skills:['スケジュール管理','タスク整理','定期タスク設定','Google Calendar'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'先生直属',c:'chip-blue'}] },
+  { id:'note-writer', name:'エンジェウーモン', role:'note記事作成 — 医療コンテンツ', avatar:'https://digimon.net/cimages/digimon/angewomon.jpg', evo:'⚡ 成熟期', evoCls:'chip-orange', target:'オファニモン（究極体）', cmds:['/note-writer'], desc:'消化器・肛門疾患専門医Dr.Coinのnote記事をエビデンスベースで制作。Claude監修 + Geminiリサーチ体制。', skills:['医療記事執筆','エビデンス調査','Gemini連携','Claude Opus使用'], tags:[{l:'⚡ 成熟期',c:'chip-orange'},{l:'プロジェクト',c:'chip-yellow'}] },
+  { id:'video-rename', name:'ホークモン', role:'手術動画リネーム — OCR処理', avatar:'https://digimon.net/cimages/digimon/hawkmon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'シルフィーモン（完全体）', cmds:['/video-rename'], desc:'くるめ病院の手術MTS動画をOCR + 患者CSVマッチングで自動リネーム。提示不要・自律実行。', skills:['OCR処理','CSVマッチング','ファイルリネーム','自律実行'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'プロジェクト',c:'chip-pink'}] },
+  { id:'doc-handler', name:'ウィザーモン', role:'文書担当 — PDF / Word / Excel / PPT', avatar:'https://digimon.net/cimages/digimon/wizarmon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'ピエモン（究極体）', cmds:['pdf','docx','pptx','xlsx'], desc:'医療論文・学術資料のPDF読み取り、Wordレポート・診断書、PowerPointスライド、Excelデータ集計を一括担当。CTO管轄。', skills:['PDF読み取り・作成','Word文書作成','PowerPoint作成','Excel操作','医療文書処理'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'CTO管轄',c:'chip-blue'}] },
 ];
 
 function renderAgentCards() {
   document.getElementById('agents-grid').innerHTML = AGENTS.map(a => `
     <div class="agent-card" id="card-${a.id}">
       <div class="agent-card-header">
-        ${a.avatar
-          ? `<img src="${a.avatar}" class="agent-card-avatar" onerror="this.outerHTML='<div class=\\'agent-card-avatar\\'style=\\'display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:var(--text2);\\'>${a.name[0]}</div>'">`
-          : `<div class="agent-card-avatar" style="display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--text2);">ポコ</div>`
-        }
+        <img src="${a.avatar}" class="agent-card-avatar" onerror="this.outerHTML='<div class=\\'agent-card-avatar\\'style=\\'display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:var(--text2);\\'>${a.name[0]}</div>'">
         <div class="agent-card-title">
           <div class="name">${a.name}</div>
           <div class="role">${a.role}</div>
@@ -538,6 +542,8 @@ function renderAgentCards() {
         </div>
       </div>
       <div class="agent-desc">${a.desc}</div>
+      ${a.cmds && a.cmds.length ? `<div class="cmd-section"><div class="cmd-label">スキルコマンド</div><div class="agent-skills">${a.cmds.map(c=>`<span class="cmd-tag">${c}</span>`).join('')}</div></div>` : ''}
+      <div class="cmd-label" style="margin-top:6px">できること</div>
       <div class="agent-skills">${a.skills.map(s=>`<span class="skill-tag">${s}</span>`).join('')}</div>
       <div class="agent-footer">
         <div class="evo-line">目標: <strong>${a.target}</strong></div>
