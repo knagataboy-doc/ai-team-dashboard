@@ -243,7 +243,7 @@
       <img src="https://digimon.net/cimages/digimon/kabuterimon.jpg" class="sb-av">カブテリモン（CTO）<span class="sb-badge">⚡</span>
     </div>
     <div class="sb-item" onclick="goAgent('cost-mgmt')">
-      <img src="https://digimon.net/cimages/digimon/terriermon.jpg" class="sb-av">テリアモン（コスト）<span class="sb-badge">🌱</span>
+      <img src="https://digimon.net/cimages/digimon/galgomon.jpg" class="sb-av">ガルゴモン（コスト）<span class="sb-badge">⚡</span>
     </div>
     <div class="sb-item" onclick="goAgent('security')">
       <img src="https://digimon.net/cimages/digimon/tokomon.jpg" class="sb-av">トコモン（セキュリティ）<span class="sb-badge">🐥</span>
@@ -272,20 +272,26 @@
     <div class="sb-item" onclick="goAgent('doc-handler')">
       <img src="https://digimon.net/cimages/digimon/gazimon.jpg" class="sb-av" onerror="this.outerHTML='<span class=\'sb-av\' style=\'font-size:12px;display:flex;align-items:center;justify-content:center;\'>ガ</span>'">ガジモン（文書）<span class="sb-badge">🌱</span>
     </div>
+    <div class="sb-item" onclick="goAgent('audio-to-note')">
+      <img src="https://digimon.net/cimages/digimon/gomamon.jpg" class="sb-av" onerror="this.style.display='none'">ゴマモン（音声）<span class="sb-badge">🌱</span>
+    </div>
+    <div class="sb-item" onclick="goAgent('clinical-kb')">
+      <img src="https://digimon.net/cimages/digimon/dorumon.jpg" class="sb-av" onerror="this.outerHTML='<span class=\'sb-av\' style=\'font-size:12px;display:flex;align-items:center;justify-content:center;\'>ド</span>'">ドルモン（臨床KB）<span class="sb-badge">🌱</span>
+    </div>
   </div>
   <div class="sb-section">
     <div class="sb-title">コンテンツ・SNS戦略</div>
     <div class="sb-item" onclick="goAgent('content-strategist')">
-      <img src="https://digimon.net/cimages/digimon/wanyamon.jpg" class="sb-av" onerror="this.style.display='none'">ワニャモン（戦略）<span class="sb-badge">🐥</span>
+      <img src="https://digimon.net/cimages/digimon/wanyamon.jpg" class="sb-av" onerror="this.style.display='none'">ワニャモン（戦略）<span class="sb-badge">🌱</span>
     </div>
     <div class="sb-item" onclick="goAgent('medical-researcher')">
       <img src="https://digimon.net/cimages/digimon/upamon.jpg" class="sb-av" onerror="this.style.display='none'">ウパモン（研究）<span class="sb-badge">🐥</span>
     </div>
     <div class="sb-item" onclick="goAgent('sns-scheduler')">
-      <img src="https://digimon.net/cimages/digimon/chibimon.jpg" class="sb-av" onerror="this.style.display='none'">チビモン（SNS）<span class="sb-badge">🐥</span>
+      <img src="https://digimon.net/cimages/digimon/veemon.jpg" class="sb-av" onerror="this.style.display='none'">ブイモン（SNS）<span class="sb-badge">🌱</span>
     </div>
     <div class="sb-item" onclick="goAgent('substack-writer')">
-      <img src="https://digimon.net/cimages/digimon/gigimon.jpg" class="sb-av" onerror="this.style.display='none'">ギギモン（Substack）<span class="sb-badge">🐥</span>
+      <img src="https://digimon.net/cimages/digimon/gigimon.jpg" class="sb-av" onerror="this.style.display='none'">ギギモン（Substack）<span class="sb-badge">🌱</span>
     </div>
     <div class="sb-item" onclick="goAgent('instagram-visual')">
       <img src="https://digimon.net/cimages/digimon/chocomon.jpg" class="sb-av" onerror="this.style.display='none'">チョコモン（IG）<span class="sb-badge">🐥</span>
@@ -308,13 +314,13 @@
   <div class="stats-bar">
     <div class="stat-card">
       <div class="stat-label">エージェント数</div>
-      <div class="stat-value" style="color:var(--accent)">11</div>
-      <div class="stat-sub">コア8 + プロジェクト2 + 先生</div>
+      <div class="stat-value" style="color:var(--accent)">19</div>
+      <div class="stat-sub">コア8 + プロジェクト11 + 先生</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">稼働ステージ</div>
-      <div class="stat-value" style="color:var(--orange);font-size:14px;margin-top:5px;">成熟期 ×3</div>
-      <div class="stat-sub">成長期 ×3 / 幼年期Ⅱ ×4</div>
+      <div class="stat-value" style="color:var(--orange);font-size:14px;margin-top:5px;">成熟期 ×5</div>
+      <div class="stat-sub">成長期 ×8 / 幼年期Ⅱ ×6</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">メインモデル</div>
@@ -381,10 +387,10 @@
                       <!-- テリアモン -->
                       <li>
                         <div class="org-node" onclick="openChat('cost-mgmt')">
-                          <img src="https://digimon.net/cimages/digimon/terriermon.jpg" class="node-avatar" style="border-color:var(--green)" onerror="this.style.display='none'">
-                          <div class="node-name">テリアモン</div>
+                          <img src="https://digimon.net/cimages/digimon/galgomon.jpg" class="node-avatar" style="border-color:var(--orange)" onerror="this.style.display='none'">
+                          <div class="node-name">ガルゴモン</div>
                           <div class="node-role">コスト管理</div>
-                          <span class="evo-badge evo-growth">🌱 成長期</span>
+                          <span class="evo-badge evo-mature">⚡ 成熟期</span>
                         </div>
                       </li>
                       <!-- トコモン -->
@@ -465,6 +471,18 @@
             <div class="node-role">手術動画リネーム</div>
             <span class="evo-badge evo-mature">⚡ 成熟期</span>
           </div>
+          <div class="org-project-card" onclick="openChat('audio-to-note')">
+            <img src="https://digimon.net/cimages/digimon/gomamon.jpg" class="node-avatar" style="border-color:var(--yellow)" onerror="this.style.display='none'">
+            <div class="node-name">ゴマモン</div>
+            <div class="node-role">音声ノート処理</div>
+            <span class="evo-badge evo-growth">🌱 成長期</span>
+          </div>
+          <div class="org-project-card" onclick="openChat('clinical-kb')">
+            <img src="https://digimon.net/cimages/digimon/dorumon.jpg" class="node-avatar" style="border-color:var(--accent)" onerror="this.style.display='none'">
+            <div class="node-name">ドルモン</div>
+            <div class="node-role">臨床ナレッジ</div>
+            <span class="evo-badge evo-growth">🌱 成長期</span>
+          </div>
         </div>
       </div>
       <!-- コンテンツ・SNS戦略部門 -->
@@ -475,7 +493,7 @@
             <img src="https://digimon.net/cimages/digimon/wanyamon.jpg" class="node-avatar" style="border-color:var(--purple)" onerror="this.style.display='none'">
             <div class="node-name">ワニャモン</div>
             <div class="node-role">コンテンツ戦略</div>
-            <span class="evo-badge evo-child">🐥 幼年期Ⅱ</span>
+            <span class="evo-badge evo-growth">🌱 成長期</span>
           </div>
           <div class="org-project-card" onclick="openChat('medical-researcher')">
             <img src="https://digimon.net/cimages/digimon/upamon.jpg" class="node-avatar" style="border-color:var(--purple)" onerror="this.style.display='none'">
@@ -484,16 +502,16 @@
             <span class="evo-badge evo-child">🐥 幼年期Ⅱ</span>
           </div>
           <div class="org-project-card" onclick="openChat('sns-scheduler')">
-            <img src="https://digimon.net/cimages/digimon/chibimon.jpg" class="node-avatar" style="border-color:var(--purple)" onerror="this.style.display='none'">
-            <div class="node-name">チビモン</div>
+            <img src="https://digimon.net/cimages/digimon/veemon.jpg" class="node-avatar" style="border-color:var(--purple)" onerror="this.style.display='none'">
+            <div class="node-name">ブイモン</div>
             <div class="node-role">SNS運用</div>
-            <span class="evo-badge evo-child">🐥 幼年期Ⅱ</span>
+            <span class="evo-badge evo-growth">🌱 成長期</span>
           </div>
           <div class="org-project-card" onclick="openChat('substack-writer')">
             <img src="https://digimon.net/cimages/digimon/gigimon.jpg" class="node-avatar" style="border-color:var(--purple)" onerror="this.style.display='none'">
             <div class="node-name">ギギモン</div>
             <div class="node-role">Substack / 海外展開</div>
-            <span class="evo-badge evo-child">🐥 幼年期Ⅱ</span>
+            <span class="evo-badge evo-growth">🌱 成長期</span>
           </div>
           <div class="org-project-card" onclick="openChat('instagram-visual')">
             <img src="https://digimon.net/cimages/digimon/chocomon.jpg" class="node-avatar" style="border-color:var(--purple)" onerror="this.style.display='none'">
@@ -518,7 +536,7 @@
   <div id="view-agents">
     <div class="section-header">
       <div><div class="section-title">エージェント一覧</div><div class="section-desc">全メンバーの役割・スキル・進化状態</div></div>
-      <span class="badge-count">11 エージェント</span>
+      <span class="badge-count">19 エージェント</span>
     </div>
     <div class="agents-grid" id="agents-grid"></div>
   </div>
@@ -592,7 +610,7 @@
 const AGENTS = [
   { id:'coo', name:'グレイモン', role:'COO — 組織全体の監督', avatar:'https://digimon.net/cimages/digimon/greymon-first.jpg', evo:'⚡ 成熟期', evoCls:'chip-orange', target:'ウォーグレイモン（究極体）', cmds:['/coo'], desc:'長田先生の右腕。全エージェントへの指示振り分け、組織パフォーマンス管理、毎朝6:30の日次レポート生成を担う。', skills:['組織統括','タスク振り分け','日次レポート','Notion出力','モデル判定'], tags:[{l:'⚡ 成熟期',c:'chip-orange'},{l:'コア',c:'chip-blue'}] },
   { id:'cto', name:'カブテリモン', role:'CTO — システム・AI分業最適化', avatar:'https://digimon.net/cimages/digimon/kabuterimon.jpg', evo:'⚡ 成熟期', evoCls:'chip-orange', target:'ヘラクルカブテリモン（究極体）', cmds:['/cto','update-config','simplify','claude-api','keybindings-help'], desc:'AI分業アーキテクチャ設計。ツール調査・実装。設定管理・コード品質・API開発ツールを管轄。ガジモン・テリアモン・トコモン・ツノモンを管轄。', skills:['AI分業設計','Python判定','ツール調査','設定管理','コード品質','API開発'], tags:[{l:'⚡ 成熟期',c:'chip-orange'},{l:'システム',c:'chip-blue'}] },
-  { id:'cost-mgmt', name:'テリアモン', role:'コスト管理 — 使用量監視', avatar:'https://digimon.net/cimages/digimon/terriermon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'セントガルゴモン（究極体）', cmds:['/cost-mgmt'], desc:'Claude / Google APIの月額料金・トークン使用量をグラフ化。分業原則の監視・最適化提案。CTOの管轄。', skills:['コスト可視化','トークン監視','分業原則管理','アラート'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'CTO管轄',c:'chip-yellow'}] },
+  { id:'cost-mgmt', name:'ガルゴモン', role:'コスト管理 — 使用量監視', avatar:'https://digimon.net/cimages/digimon/galgomon.jpg', evo:'⚡ 成熟期', evoCls:'chip-orange', target:'セントガルゴモン（究極体）', cmds:['/cost-mgmt'], desc:'Claude / Google APIの月額料金・トークン使用量をグラフ化。分業原則の監視・最適化提案。CTOの管轄。', skills:['コスト可視化','トークン監視','分業原則管理','アラート'], tags:[{l:'⚡ 成熟期',c:'chip-orange'},{l:'CTO管轄',c:'chip-yellow'}] },
   { id:'security', name:'トコモン', role:'セキュリティ — リスク評価', avatar:'https://digimon.net/cimages/digimon/tokomon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'セラフィモン（究極体）', cmds:[], desc:'定期セキュリティチェック。新ツール導入時のリスク評価。APIキー・認証情報のgit追跡防止。CTOの管轄。', skills:['セキュリティ監査','.gitignore管理','リスク評価'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'CTO管轄',c:'chip-pink'}] },
   { id:'handover', name:'ツノモン', role:'PC間同期 — 引き継ぎ担当', avatar:'https://digimon.net/cimages/digimon/tunomon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'ガブモン→ガルルモン→メタルガルルモン（究極体）', cmds:['/handover','/session-end','loop'], desc:'セッション終了時に引き継ぎノート生成・git push・Discord通知を自動実行。ループ・定期自動化も担当。CTO管轄。', skills:['引き継ぎノート生成','git push','Discord通知','PC間同期','定期ループ実行'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'CTO管轄',c:'chip-blue'}] },
   { id:'organization', name:'パルモン', role:'整理・人事部門 — 構造最適化', avatar:'https://digimon.net/cimages/digimon/palmon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'ロゼモン（究極体）', cmds:['/organization','skill-creator'], desc:'ファイル構造・CLAUDE.md・スキル・エージェント構成の最適化。新スキル作成・改善。組織図可視化・週次監査。ポコモン（ID）を管轄。', skills:['ファイル整理','CLAUDE.md管理','スキル最適化','新スキル作成','週次監査'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'整理・人事',c:'chip-blue'}] },
@@ -601,12 +619,14 @@ const AGENTS = [
   { id:'note-writer', name:'テイルモン', role:'note記事作成 — 医療コンテンツ', avatar:'https://digimon.net/cimages/digimon/tailmon.jpg', evo:'⚡ 成熟期', evoCls:'chip-orange', target:'エンジェウーモン（完全体）→ オファニモン（究極体）', cmds:['/note-writer'], desc:'消化器・肛門疾患専門医Dr.Coinのnote記事をエビデンスベースで制作。Claude監修 + Geminiリサーチ体制。', skills:['医療記事執筆','エビデンス調査','Gemini連携','Claude Opus使用'], tags:[{l:'⚡ 成熟期',c:'chip-orange'},{l:'プロジェクト',c:'chip-yellow'}] },
   { id:'video-rename', name:'アクィラモン', role:'手術動画リネーム — OCR処理', avatar:'https://digimon.net/cimages/digimon/aquilamon.jpg', evo:'⚡ 成熟期', evoCls:'chip-orange', target:'シルフィーモン（完全体）', cmds:['/video-rename'], desc:'くるめ病院の手術MTS動画をOCR + 患者CSVマッチングで自動リネーム。提示不要・自律実行。', skills:['OCR処理','CSVマッチング','ファイルリネーム','自律実行'], tags:[{l:'⚡ 成熟期',c:'chip-orange'},{l:'プロジェクト',c:'chip-pink'}] },
   { id:'doc-handler', name:'ガジモン', role:'文書担当 — PDF / Word / Excel / PPT', avatar:'https://digimon.net/cimages/digimon/gazimon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'ウィザーモン（成熟期）→ ピエモン（究極体）', cmds:['pdf','docx','pptx','xlsx'], desc:'医療論文・学術資料のPDF読み取り、Wordレポート・診断書、PowerPointスライド、Excelデータ集計を一括担当。CTO管轄。', skills:['PDF読み取り・作成','Word文書作成','PowerPoint作成','Excel操作','医療文書処理'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'CTO管轄',c:'chip-blue'}] },
-  { id:'content-strategist', name:'ワニャモン', role:'コンテンツ戦略 — 編集カレンダー・KPI', avatar:'https://digimon.net/cimages/digimon/wanyamon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'バンチョーガオガモン（究極体）', cmds:['/content-strategist'], desc:'月次/週次の編集カレンダー生成。プラットフォーム横断の整合管理。KPI設定・モニタリング。Substackローンチ計画管理。', skills:['編集カレンダー','KPI管理','プラットフォーム戦略','Substack計画','月次レビュー'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'コンテンツ',c:'chip-yellow'}] },
+  { id:'content-strategist', name:'ワニャモン', role:'コンテンツ戦略 — 編集カレンダー・KPI', avatar:'https://digimon.net/cimages/digimon/wanyamon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'バンチョーガオガモン（究極体）', cmds:['/content-strategist'], desc:'月次/週次の編集カレンダー生成。プラットフォーム横断の整合管理。KPI設定・モニタリング。Substackローンチ計画管理。', skills:['編集カレンダー','KPI管理','プラットフォーム戦略','Substack計画','月次レビュー'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'コンテンツ',c:'chip-yellow'}] },
   { id:'medical-researcher', name:'ウパモン', role:'メディカルリサーチ — エビデンス調査', avatar:'https://digimon.net/cimages/digimon/upamon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'ヴァイクモン（究極体）', cmds:['/medical-researcher'], desc:'PubMed・ガイドライン検索でエビデンスを収集。note-writer/substack-writerにリサーチ提供。ファクトチェック。', skills:['PubMed検索','ガイドライン調査','エビデンスサマリー','ファクトチェック','文献管理'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'リサーチ',c:'chip-yellow'}] },
-  { id:'sns-scheduler', name:'チビモン', role:'SNS運用 — クロスプラットフォーム', avatar:'https://digimon.net/cimages/digimon/chibimon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'アルフォースブイドラモン（究極体）', cmds:['/sns-scheduler'], desc:'Threads/X/Instagram/LinkedIn向け投稿テキストを自動生成。note記事からSNS展開。曜日パターン投稿管理。', skills:['Threads投稿','X投稿','Instagram','LinkedIn','クロスSNS展開','スケジュール管理'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'SNS',c:'chip-orange'}] },
-  { id:'substack-writer', name:'ギギモン', role:'Substack — 英語コンテンツ・海外展開', avatar:'https://digimon.net/cimages/digimon/gigimon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'デュークモン（究極体）', cmds:['/substack-writer'], desc:'note記事の英語ローカライズ。Substackニュースレター・LinkedIn英語投稿の制作。海外読者向けオリジナル記事。', skills:['英語記事執筆','ローカライズ','Substack','LinkedIn英語','海外SEO'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'国際展開',c:'chip-green'}] },
+  { id:'sns-scheduler', name:'ブイモン', role:'SNS運用 — クロスプラットフォーム', avatar:'https://digimon.net/cimages/digimon/veemon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'アルフォースブイドラモン（究極体）', cmds:['/sns-scheduler'], desc:'Threads/X/Instagram/LinkedIn向け投稿テキストを自動生成。note記事からSNS展開。曜日パターン投稿管理。', skills:['Threads投稿','X投稿','Instagram','LinkedIn','クロスSNS展開','スケジュール管理'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'SNS',c:'chip-orange'}] },
+  { id:'substack-writer', name:'ギギモン', role:'Substack — 英語コンテンツ・海外展開', avatar:'https://digimon.net/cimages/digimon/gigimon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'デュークモン（究極体）', cmds:['/substack-writer'], desc:'note記事の英語ローカライズ。Substackニュースレター・LinkedIn英語投稿の制作。海外読者向けオリジナル記事。', skills:['英語記事執筆','ローカライズ','Substack','LinkedIn英語','海外SEO'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'国際展開',c:'chip-green'}] },
   { id:'instagram-visual', name:'チョコモン', role:'Instagram — ビジュアル戦略', avatar:'https://digimon.net/cimages/digimon/chocomon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'チェルビモン（究極体）', cmds:['/instagram-visual'], desc:'医療インフォグラフィック企画・スライド構成。Reels/Storiesスクリプト生成。キャプション・ハッシュタグ最適化。', skills:['インフォグラフィック','スライド構成','Reelsスクリプト','キャプション','ハッシュタグ'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'ビジュアル',c:'chip-pink'}] },
   { id:'analytics-reporter', name:'ホップモン', role:'分析・KPI — 週次レポート', avatar:'https://digimon.net/cimages/digimon/hopmon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'ジャスティモン（究極体）', cmds:['/analytics-reporter'], desc:'note/Threads/X/Instagram/LinkedIn/SubstackのKPIを集計。改善提案付き週次レポートを毎週金曜に生成。', skills:['KPI集計','エンゲージメント分析','週次レポート','改善提案','プラットフォーム比較'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'分析',c:'chip-orange'}] },
+  { id:'audio-to-note', name:'ゴマモン', role:'音声ノート処理 — 文字起こし・Obsidian変換', avatar:'https://digimon.net/cimages/digimon/gomamon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'バイキングモン（究極体）', cmds:['/audio-to-note'], desc:'音声録音を文字起こしして構造化されたObsidianノートに変換。診療メモ・会議議事録・アイデアの音声入力に対応。', skills:['音声文字起こし','Obsidianノート変換','診療メモ','議事録作成'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'プロジェクト',c:'chip-yellow'}] },
+  { id:'clinical-kb', name:'ドルモン', role:'臨床ナレッジ — 文献管理・知識集積', avatar:'https://digimon.net/cimages/digimon/dorumon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'アルファモン（究極体）', cmds:['/clinical-kb'], desc:'医学文献をZoteroに保存し、Obsidianに構造化サマリーを自動作成。診療ナレッジの継続集積を支援。DOI/PMID入力で文献自動整理。', skills:['Zotero文献管理','Obsidianサマリー','PubMed検索','臨床ナレッジ集積','ガイドライン管理'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'医療知識',c:'chip-blue'}] },
 ];
 
 function renderAgentCards() {
