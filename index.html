@@ -282,16 +282,16 @@
   <div class="sb-section">
     <div class="sb-title">コンテンツ・SNS戦略</div>
     <div class="sb-item" onclick="goAgent('content-strategist')">
-      <img src="https://digimon.net/cimages/digimon/wanyamon.jpg" class="sb-av" onerror="this.style.display='none'">ワニャモン（戦略）<span class="sb-badge">🌱</span>
+      <img src="https://digimon.net/cimages/digimon/wanyamon.jpg" class="sb-av" onerror="this.style.display='none'">ワニャモン（戦略）<span class="sb-badge">🐥</span>
     </div>
     <div class="sb-item" onclick="goAgent('medical-researcher')">
       <img src="https://digimon.net/cimages/digimon/upamon.jpg" class="sb-av" onerror="this.style.display='none'">ウパモン（研究）<span class="sb-badge">🐥</span>
     </div>
     <div class="sb-item" onclick="goAgent('sns-scheduler')">
-      <img src="https://digimon.net/cimages/digimon/veemon.jpg" class="sb-av" onerror="this.style.display='none'">ブイモン（SNS）<span class="sb-badge">🌱</span>
+      <img src="https://digimon.net/cimages/digimon/v-mon.jpg" class="sb-av" onerror="this.style.display='none'">ブイモン（SNS）<span class="sb-badge">🌱</span>
     </div>
     <div class="sb-item" onclick="goAgent('substack-writer')">
-      <img src="https://digimon.net/cimages/digimon/gigimon.jpg" class="sb-av" onerror="this.style.display='none'">ギギモン（Substack）<span class="sb-badge">🌱</span>
+      <img src="https://digimon.net/cimages/digimon/gigimon.jpg" class="sb-av" onerror="this.style.display='none'">ギギモン（Substack）<span class="sb-badge">🐥</span>
     </div>
     <div class="sb-item" onclick="goAgent('instagram-visual')">
       <img src="https://digimon.net/cimages/digimon/chocomon.jpg" class="sb-av" onerror="this.style.display='none'">チョコモン（IG）<span class="sb-badge">🐥</span>
@@ -320,7 +320,7 @@
     <div class="stat-card">
       <div class="stat-label">稼働ステージ</div>
       <div class="stat-value" style="color:var(--orange);font-size:14px;margin-top:5px;">成熟期 ×5</div>
-      <div class="stat-sub">成長期 ×8 / 幼年期Ⅱ ×6</div>
+      <div class="stat-sub">成長期 ×6 / 幼年期Ⅱ ×8</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">メインモデル</div>
@@ -493,7 +493,7 @@
             <img src="https://digimon.net/cimages/digimon/wanyamon.jpg" class="node-avatar" style="border-color:var(--purple)" onerror="this.style.display='none'">
             <div class="node-name">ワニャモン</div>
             <div class="node-role">コンテンツ戦略</div>
-            <span class="evo-badge evo-growth">🌱 成長期</span>
+            <span class="evo-badge evo-child">🐥 幼年期Ⅱ</span>
           </div>
           <div class="org-project-card" onclick="openChat('medical-researcher')">
             <img src="https://digimon.net/cimages/digimon/upamon.jpg" class="node-avatar" style="border-color:var(--purple)" onerror="this.style.display='none'">
@@ -502,7 +502,7 @@
             <span class="evo-badge evo-child">🐥 幼年期Ⅱ</span>
           </div>
           <div class="org-project-card" onclick="openChat('sns-scheduler')">
-            <img src="https://digimon.net/cimages/digimon/veemon.jpg" class="node-avatar" style="border-color:var(--purple)" onerror="this.style.display='none'">
+            <img src="https://digimon.net/cimages/digimon/v-mon.jpg" class="node-avatar" style="border-color:var(--purple)" onerror="this.style.display='none'">
             <div class="node-name">ブイモン</div>
             <div class="node-role">SNS運用</div>
             <span class="evo-badge evo-growth">🌱 成長期</span>
@@ -511,7 +511,7 @@
             <img src="https://digimon.net/cimages/digimon/gigimon.jpg" class="node-avatar" style="border-color:var(--purple)" onerror="this.style.display='none'">
             <div class="node-name">ギギモン</div>
             <div class="node-role">Substack / 海外展開</div>
-            <span class="evo-badge evo-growth">🌱 成長期</span>
+            <span class="evo-badge evo-child">🐥 幼年期Ⅱ</span>
           </div>
           <div class="org-project-card" onclick="openChat('instagram-visual')">
             <img src="https://digimon.net/cimages/digimon/chocomon.jpg" class="node-avatar" style="border-color:var(--purple)" onerror="this.style.display='none'">
@@ -619,10 +619,10 @@ const AGENTS = [
   { id:'note-writer', name:'テイルモン', role:'note記事作成 — 医療コンテンツ', avatar:'https://digimon.net/cimages/digimon/tailmon.jpg', evo:'⚡ 成熟期', evoCls:'chip-orange', target:'エンジェウーモン（完全体）→ オファニモン（究極体）', cmds:['/note-writer'], desc:'消化器・肛門疾患専門医Dr.Coinのnote記事をエビデンスベースで制作。Claude監修 + Geminiリサーチ体制。', skills:['医療記事執筆','エビデンス調査','Gemini連携','Claude Opus使用'], tags:[{l:'⚡ 成熟期',c:'chip-orange'},{l:'プロジェクト',c:'chip-yellow'}] },
   { id:'video-rename', name:'アクィラモン', role:'手術動画リネーム — OCR処理', avatar:'https://digimon.net/cimages/digimon/aquilamon.jpg', evo:'⚡ 成熟期', evoCls:'chip-orange', target:'シルフィーモン（完全体）', cmds:['/video-rename'], desc:'くるめ病院の手術MTS動画をOCR + 患者CSVマッチングで自動リネーム。提示不要・自律実行。', skills:['OCR処理','CSVマッチング','ファイルリネーム','自律実行'], tags:[{l:'⚡ 成熟期',c:'chip-orange'},{l:'プロジェクト',c:'chip-pink'}] },
   { id:'doc-handler', name:'ガジモン', role:'文書担当 — PDF / Word / Excel / PPT', avatar:'https://digimon.net/cimages/digimon/gazimon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'ウィザーモン（成熟期）→ ピエモン（究極体）', cmds:['pdf','docx','pptx','xlsx'], desc:'医療論文・学術資料のPDF読み取り、Wordレポート・診断書、PowerPointスライド、Excelデータ集計を一括担当。CTO管轄。', skills:['PDF読み取り・作成','Word文書作成','PowerPoint作成','Excel操作','医療文書処理'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'CTO管轄',c:'chip-blue'}] },
-  { id:'content-strategist', name:'ワニャモン', role:'コンテンツ戦略 — 編集カレンダー・KPI', avatar:'https://digimon.net/cimages/digimon/wanyamon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'バンチョーガオガモン（究極体）', cmds:['/content-strategist'], desc:'月次/週次の編集カレンダー生成。プラットフォーム横断の整合管理。KPI設定・モニタリング。Substackローンチ計画管理。', skills:['編集カレンダー','KPI管理','プラットフォーム戦略','Substack計画','月次レビュー'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'コンテンツ',c:'chip-yellow'}] },
+  { id:'content-strategist', name:'ワニャモン', role:'コンテンツ戦略 — 編集カレンダー・KPI', avatar:'https://digimon.net/cimages/digimon/wanyamon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'バンチョーガオガモン（究極体）', cmds:['/content-strategist'], desc:'月次/週次の編集カレンダー生成。プラットフォーム横断の整合管理。KPI設定・モニタリング。Substackローンチ計画管理。', skills:['編集カレンダー','KPI管理','プラットフォーム戦略','Substack計画','月次レビュー'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'コンテンツ',c:'chip-yellow'}] },
   { id:'medical-researcher', name:'ウパモン', role:'メディカルリサーチ — エビデンス調査', avatar:'https://digimon.net/cimages/digimon/upamon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'ヴァイクモン（究極体）', cmds:['/medical-researcher'], desc:'PubMed・ガイドライン検索でエビデンスを収集。note-writer/substack-writerにリサーチ提供。ファクトチェック。', skills:['PubMed検索','ガイドライン調査','エビデンスサマリー','ファクトチェック','文献管理'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'リサーチ',c:'chip-yellow'}] },
-  { id:'sns-scheduler', name:'ブイモン', role:'SNS運用 — クロスプラットフォーム', avatar:'https://digimon.net/cimages/digimon/veemon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'アルフォースブイドラモン（究極体）', cmds:['/sns-scheduler'], desc:'Threads/X/Instagram/LinkedIn向け投稿テキストを自動生成。note記事からSNS展開。曜日パターン投稿管理。', skills:['Threads投稿','X投稿','Instagram','LinkedIn','クロスSNS展開','スケジュール管理'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'SNS',c:'chip-orange'}] },
-  { id:'substack-writer', name:'ギギモン', role:'Substack — 英語コンテンツ・海外展開', avatar:'https://digimon.net/cimages/digimon/gigimon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'デュークモン（究極体）', cmds:['/substack-writer'], desc:'note記事の英語ローカライズ。Substackニュースレター・LinkedIn英語投稿の制作。海外読者向けオリジナル記事。', skills:['英語記事執筆','ローカライズ','Substack','LinkedIn英語','海外SEO'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'国際展開',c:'chip-green'}] },
+  { id:'sns-scheduler', name:'ブイモン', role:'SNS運用 — クロスプラットフォーム', avatar:'https://digimon.net/cimages/digimon/v-mon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'アルフォースブイドラモン（究極体）', cmds:['/sns-scheduler'], desc:'Threads/X/Instagram/LinkedIn向け投稿テキストを自動生成。note記事からSNS展開。曜日パターン投稿管理。', skills:['Threads投稿','X投稿','Instagram','LinkedIn','クロスSNS展開','スケジュール管理'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'SNS',c:'chip-orange'}] },
+  { id:'substack-writer', name:'ギギモン', role:'Substack — 英語コンテンツ・海外展開', avatar:'https://digimon.net/cimages/digimon/gigimon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'デュークモン（究極体）', cmds:['/substack-writer'], desc:'note記事の英語ローカライズ。Substackニュースレター・LinkedIn英語投稿の制作。海外読者向けオリジナル記事。', skills:['英語記事執筆','ローカライズ','Substack','LinkedIn英語','海外SEO'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'国際展開',c:'chip-green'}] },
   { id:'instagram-visual', name:'チョコモン', role:'Instagram — ビジュアル戦略', avatar:'https://digimon.net/cimages/digimon/chocomon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'チェルビモン（究極体）', cmds:['/instagram-visual'], desc:'医療インフォグラフィック企画・スライド構成。Reels/Storiesスクリプト生成。キャプション・ハッシュタグ最適化。', skills:['インフォグラフィック','スライド構成','Reelsスクリプト','キャプション','ハッシュタグ'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'ビジュアル',c:'chip-pink'}] },
   { id:'analytics-reporter', name:'ホップモン', role:'分析・KPI — 週次レポート', avatar:'https://digimon.net/cimages/digimon/hopmon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'ジャスティモン（究極体）', cmds:['/analytics-reporter'], desc:'note/Threads/X/Instagram/LinkedIn/SubstackのKPIを集計。改善提案付き週次レポートを毎週金曜に生成。', skills:['KPI集計','エンゲージメント分析','週次レポート','改善提案','プラットフォーム比較'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'分析',c:'chip-orange'}] },
   { id:'audio-to-note', name:'ゴマモン', role:'音声ノート処理 — 文字起こし・Obsidian変換', avatar:'https://digimon.net/cimages/digimon/gomamon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'バイキングモン（究極体）', cmds:['/audio-to-note'], desc:'音声録音を文字起こしして構造化されたObsidianノートに変換。診療メモ・会議議事録・アイデアの音声入力に対応。', skills:['音声文字起こし','Obsidianノート変換','診療メモ','議事録作成'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'プロジェクト',c:'chip-yellow'}] },
