@@ -278,6 +278,9 @@
     <div class="sb-item" onclick="goAgent('clinical-kb')">
       <img src="https://digimon.net/cimages/digimon/dorumon.jpg" class="sb-av" onerror="this.outerHTML='<span class=\'sb-av\' style=\'font-size:12px;display:flex;align-items:center;justify-content:center;\'>ド</span>'">ドルモン（臨床KB）<span class="sb-badge">🌱</span>
     </div>
+    <div class="sb-item" onclick="goAgent('bs-pl-transcriber')">
+      <img src="https://digimon.net/cimages/digimon/gotsumon.jpg" class="sb-av" onerror="this.style.display='none'">ゴッツモン（財務）<span class="sb-badge">🐥</span>
+    </div>
   </div>
   <div class="sb-section">
     <div class="sb-title">コンテンツ・SNS戦略</div>
@@ -314,13 +317,13 @@
   <div class="stats-bar">
     <div class="stat-card">
       <div class="stat-label">エージェント数</div>
-      <div class="stat-value" style="color:var(--accent)">19</div>
-      <div class="stat-sub">コア8 + プロジェクト11 + 先生</div>
+      <div class="stat-value" style="color:var(--accent)">20</div>
+      <div class="stat-sub">コア8 + プロジェクト12 + 先生</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">稼働ステージ</div>
       <div class="stat-value" style="color:var(--orange);font-size:14px;margin-top:5px;">成熟期 ×5</div>
-      <div class="stat-sub">成長期 ×6 / 幼年期Ⅱ ×8</div>
+      <div class="stat-sub">成長期 ×6 / 幼年期Ⅱ ×9</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">メインモデル</div>
@@ -483,6 +486,12 @@
             <div class="node-role">臨床ナレッジ</div>
             <span class="evo-badge evo-growth">🌱 成長期</span>
           </div>
+          <div class="org-project-card" onclick="openChat('bs-pl-transcriber')">
+            <img src="https://digimon.net/cimages/digimon/gotsumon.jpg" class="node-avatar" style="border-color:var(--purple)" onerror="this.style.display='none'">
+            <div class="node-name">ゴッツモン</div>
+            <div class="node-role">財務転記 B/S・P/L</div>
+            <span class="evo-badge evo-child">🐥 幼年期Ⅱ</span>
+          </div>
         </div>
       </div>
       <!-- コンテンツ・SNS戦略部門 -->
@@ -536,7 +545,7 @@
   <div id="view-agents">
     <div class="section-header">
       <div><div class="section-title">エージェント一覧</div><div class="section-desc">全メンバーの役割・スキル・進化状態</div></div>
-      <span class="badge-count">19 エージェント</span>
+      <span class="badge-count">20 エージェント</span>
     </div>
     <div class="agents-grid" id="agents-grid"></div>
   </div>
@@ -627,6 +636,7 @@ const AGENTS = [
   { id:'analytics-reporter', name:'ホップモン', role:'分析・KPI — 週次レポート', avatar:'https://digimon.net/cimages/digimon/hopmon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'ジャスティモン（究極体）', cmds:['/analytics-reporter'], desc:'note/Threads/X/Instagram/LinkedIn/SubstackのKPIを集計。改善提案付き週次レポートを毎週金曜に生成。', skills:['KPI集計','エンゲージメント分析','週次レポート','改善提案','プラットフォーム比較'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'分析',c:'chip-orange'}] },
   { id:'audio-to-note', name:'ゴマモン', role:'音声ノート処理 — 文字起こし・Obsidian変換', avatar:'https://digimon.net/cimages/digimon/gomamon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'バイキングモン（究極体）', cmds:['/audio-to-note'], desc:'音声録音を文字起こしして構造化されたObsidianノートに変換。診療メモ・会議議事録・アイデアの音声入力に対応。', skills:['音声文字起こし','Obsidianノート変換','診療メモ','議事録作成'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'プロジェクト',c:'chip-yellow'}] },
   { id:'clinical-kb', name:'ドルモン', role:'臨床ナレッジ — 文献管理・知識集積', avatar:'https://digimon.net/cimages/digimon/dorumon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'アルファモン（究極体）', cmds:['/clinical-kb'], desc:'医学文献をZoteroに保存し、Obsidianに構造化サマリーを自動作成。診療ナレッジの継続集積を支援。DOI/PMID入力で文献自動整理。', skills:['Zotero文献管理','Obsidianサマリー','PubMed検索','臨床ナレッジ集積','ガイドライン管理'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'医療知識',c:'chip-blue'}] },
+  { id:'bs-pl-transcriber', name:'ゴッツモン', role:'財務転記 — B/S・P/L Excel化', avatar:'https://digimon.net/cimages/digimon/gotsumon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'ボルケモン（成熟期）', cmds:['/bs-pl-transcriber'], desc:'ながた大腸肛門クリニックの貸借対照表（B/S）・損益計算書（P/L）画像を1年度ずつ読み取り、算術検証（逆算でOCR誤読を検出）してExcelに転記。10年分の経年推移データ構築を担当。', skills:['B/S転記','P/L転記','OCR読み取り','算術逆算検証','Excel生成','誤読修正'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'プロジェクト',c:'chip-yellow'}] },
 ];
 
 function renderAgentCards() {
