@@ -284,6 +284,9 @@
     <div class="sb-item" onclick="goAgent('bs-pl-analyst')">
       <img src="https://digimon.net/cimages/digimon/golemon.jpg" class="sb-av" onerror="this.style.display='none'">ゴーレモン（財務分析）<span class="sb-badge">⚡</span>
     </div>
+    <div class="sb-item" onclick="goAgent('pc-cleanup')">
+      <img src="https://digimon.net/cimages/digimon/kokuwamon.jpg" class="sb-av" onerror="this.style.display='none'">コカワモン（PCクリーン）<span class="sb-badge">🐥</span>
+    </div>
   </div>
   <div class="sb-section">
     <div class="sb-title">コンテンツ・SNS戦略</div>
@@ -320,13 +323,13 @@
   <div class="stats-bar">
     <div class="stat-card">
       <div class="stat-label">エージェント数</div>
-      <div class="stat-value" style="color:var(--accent)">20</div>
-      <div class="stat-sub">コア8 + プロジェクト12 + 先生</div>
+      <div class="stat-value" style="color:var(--accent)">21</div>
+      <div class="stat-sub">コア8 + プロジェクト13 + 先生</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">稼働ステージ</div>
       <div class="stat-value" style="color:var(--orange);font-size:14px;margin-top:5px;">成熟期 ×7</div>
-      <div class="stat-sub">成長期 ×6 / 幼年期Ⅱ ×8</div>
+      <div class="stat-sub">成長期 ×6 / 幼年期Ⅱ ×9</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">メインモデル</div>
@@ -501,6 +504,12 @@
             <div class="node-role">財務分析・可視化・文書作成</div>
             <span class="evo-badge evo-mature">⚡ 成熟期</span>
           </div>
+          <div class="org-project-card" onclick="openChat('pc-cleanup')">
+            <img src="https://digimon.net/cimages/digimon/kokuwamon.jpg" class="node-avatar" style="border-color:var(--purple)" onerror="this.style.display='none'">
+            <div class="node-name">コカワモン</div>
+            <div class="node-role">PCクリーンアップ・メモリ最適化</div>
+            <span class="evo-badge evo-child">🐥 幼年期Ⅱ</span>
+          </div>
         </div>
       </div>
       <!-- コンテンツ・SNS戦略部門 -->
@@ -554,7 +563,7 @@
   <div id="view-agents">
     <div class="section-header">
       <div><div class="section-title">エージェント一覧</div><div class="section-desc">全メンバーの役割・スキル・進化状態</div></div>
-      <span class="badge-count">21 エージェント</span>
+      <span class="badge-count">22 エージェント</span>
     </div>
     <div class="agents-grid" id="agents-grid"></div>
   </div>
@@ -647,6 +656,7 @@ const AGENTS = [
   { id:'clinical-kb', name:'ドルモン', role:'臨床ナレッジ — 文献管理・知識集積', avatar:'https://digimon.net/cimages/digimon/dorumon.jpg', evo:'🌱 成長期', evoCls:'chip-green', target:'アルファモン（究極体）', cmds:['/clinical-kb'], desc:'医学文献をZoteroに保存し、Obsidianに構造化サマリーを自動作成。診療ナレッジの継続集積を支援。DOI/PMID入力で文献自動整理。', skills:['Zotero文献管理','Obsidianサマリー','PubMed検索','臨床ナレッジ集積','ガイドライン管理'], tags:[{l:'🌱 成長期',c:'chip-green'},{l:'医療知識',c:'chip-blue'}] },
   { id:'bs-pl-transcriber', name:'ボルケモン（転記）', role:'財務転記 — B/S・P/L Excel化', avatar:'https://digimon.net/cimages/digimon/volcamon.jpg', evo:'⚡ 成熟期', evoCls:'chip-orange', target:'達成（2026-05-10進化）', cmds:['/bs-pl-transcriber'], desc:'ながた大腸肛門クリニックの貸借対照表（B/S）・損益計算書（P/L）画像を1年度ずつ読み取り、算術検証（逆算でOCR誤読を検出）してExcelに転記。10年分の経年推移データ構築を担当。ゴッツモンから進化。', skills:['B/S転記','P/L転記','OCR読み取り','算術逆算検証','Excel生成','誤読修正'], tags:[{l:'⚡ 成熟期',c:'chip-orange'},{l:'プロジェクト',c:'chip-yellow'}] },
   { id:'bs-pl-analyst', name:'ゴーレモン（分析）', role:'財務分析・可視化・文書作成', avatar:'https://digimon.net/cimages/digimon/golemon.jpg', evo:'⚡ 成熟期', evoCls:'chip-orange', target:'達成（2026-05-10新規・兄弟スキル）', cmds:['/bs-pl-analyst'], desc:'bs-pl-transcriberが転記したMPD_財務データ.xlsxを使い、経年推移シート生成・医師向け平易な財務分析サマリーWord作成・大学院課題テンプレート（.docx）自動埋め・B/S構造積み上げ棒チャートのリデザインを行う。ボルケモン（転記）と同じ岩石系成熟期の兄弟デジモン。', skills:['推移シート生成','分析サマリーWord作成','docxテンプレ自動埋め','B/Sチャート可視化','ナラティブ説明','財務比率計算'], tags:[{l:'⚡ 成熟期',c:'chip-orange'},{l:'プロジェクト',c:'chip-yellow'}] },
+  { id:'pc-cleanup', name:'コカワモン', role:'PCクリーンアップ — メモリ・ディスク最適化', avatar:'https://digimon.net/cimages/digimon/kokuwamon.jpg', evo:'🐥 幼年期Ⅱ', evoCls:'chip-purple', target:'ヴァルキリモン（究極体）', cmds:['/pc-cleanup'], desc:'WindowsのTEMP/キャッシュ/サムネイルDB削除・メモリトリム・スタートアップ整理を3段階で実行。PCが重い時に起動。メインPC・職場PC両対応。', skills:['TEMPクリーンアップ','ディスク解放','メモリトリム','スタートアップ整理','現状スキャン','手動ガイド生成'], tags:[{l:'🐥 幼年期Ⅱ',c:'chip-purple'},{l:'CTO管轄',c:'chip-blue'}] },
 ];
 
 function renderAgentCards() {
